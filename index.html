@@ -1,1 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>莎士比亞詞彙 A–Z</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main class="wrap">
+  <header class="top">
+    <h1>Shakespeare from A to Z</h1>
+    <p>莎士比亞詞彙・每個字母一個詞</p>
+  </header>
 
+  <nav class="nav" id="nav" aria-label="選擇字母"></nav>
+
+  <article class="card">
+    <section class="visual">
+      <div class="head">
+        <span class="letter" id="letter">A</span>
+        <span class="ipa" id="ipa"></span>
+      </div>
+      <figure class="art">
+        <img id="art" alt="" width="1200" height="900">
+        <figcaption id="missing" class="missing" hidden></figcaption>
+      </figure>
+    </section>
+
+    <section class="text">
+      <h2 class="word" id="word"></h2>
+      <p class="zh" id="zh"></p>
+
+      <blockquote class="quote">
+        <p class="q" id="quote"></p>
+        <p class="qz" id="quoteZh"></p>
+        <footer class="src" id="source"></footer>
+      </blockquote>
+
+      <p class="fact"><b>小知識</b>　<span id="fact"></span></p>
+
+      <div class="btns">
+        <button type="button" id="playWord" class="go">聽單字</button>
+        <button type="button" id="playQuote">聽金句</button>
+        <button type="button" id="prev">上一個</button>
+        <button type="button" id="next">下一個</button>
+      </div>
+      <p class="msg" id="msg" role="status"></p>
+    </section>
+  </article>
+
+  <p class="note">發音使用瀏覽器內建的英式英語語音。金句依常見版本收錄，不同版本的拼字與標點略有差異。</p>
+</main>
+
+<script src="words.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+:root{
+  --night:#151a33; --paper:#ebe8e3; --ink:#1b1d2b;
+  --gold:#c29b4b; --wine:#8c2a3a; --mute:#5f6070;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,
+          "Noto Serif TC","Songti TC","PMingLiU",serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--night);color:var(--paper);font-family:var(--serif);min-height:100vh}
+.wrap{max-width:960px;margin:0 auto;padding:20px 16px 40px}
+
+.top{text-align:center;margin-bottom:14px}
+.top h1{margin:0;font-size:1.4rem;font-weight:400;font-style:italic;color:var(--gold)}
+.top p{margin:4px 0 0;font-size:.9rem;color:#9ba0bd}
+
+.nav{display:grid;grid-template-columns:repeat(13,1fr);gap:4px;margin-bottom:18px}
+.nav button{font:inherit;padding:0;min-height:36px;background:transparent;color:var(--paper);
+  border:1px solid #3a4066;border-radius:3px;cursor:pointer}
+.nav button:hover{border-color:var(--gold)}
+.nav button[aria-current="true"]{background:var(--gold);color:var(--night);border-color:var(--gold)}
+
+.card{display:grid;grid-template-columns:minmax(280px,380px) 1fr;background:var(--paper);
+  color:var(--ink);border-radius:4px;overflow:hidden}
+
+/* 左欄：字母與音標在上，油畫在下，兩者分開 */
+.visual{display:flex;flex-direction:column;background:var(--wine)}
+.head{display:flex;align-items:baseline;gap:16px;padding:14px 22px 12px}
+.letter{font-size:4.6rem;line-height:1;font-style:italic;color:var(--gold)}
+.ipa{font-size:1.15rem;color:var(--paper)}
+.art{margin:0;background:#222;aspect-ratio:4/3;display:grid;place-items:center}
+.art img{display:block;width:100%;height:100%;object-fit:cover}
+.art img[hidden]{display:none}
+.missing{margin:0;padding:16px;font-size:.9rem;color:#d8d4cc;word-break:break-all;text-align:center}
+
+.text{padding:26px 28px}
+.word{margin:0;font-size:clamp(2rem,6vw,3rem);line-height:1.1}
+.zh{margin:4px 0 0;color:var(--wine);font-size:1.15rem}
+.quote{margin:20px 0 0;padding:2px 0 2px 16px;border-left:3px solid var(--gold)}
+.q{margin:0;font-size:1.25rem;line-height:1.5;font-style:italic}
+.qz{margin:8px 0 0;font-size:1rem;line-height:1.6}
+.src{margin:8px 0 0;font-size:.92rem;color:var(--mute)}
+.fact{margin:18px 0 0;padding:12px 14px;background:#ddd8d0;border-radius:3px;font-size:.95rem;line-height:1.6}
+.fact b{color:var(--wine)}
+
+.btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.btns button{font:inherit;font-size:1rem;padding:10px 16px;min-height:44px;border:1.5px solid var(--ink);
+  background:transparent;color:var(--ink);border-radius:3px;cursor:pointer}
+.btns .go{background:var(--ink);color:var(--paper)}
+.btns button:hover:not(:disabled){background:var(--gold);border-color:var(--gold);color:var(--ink)}
+.btns button:disabled{opacity:.35;cursor:not-allowed}
+button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.msg{min-height:1.3em;margin:10px 0 0;font-size:.9rem;color:var(--wine)}
+.note{margin:16px 4px 0;font-size:.85rem;color:#9ba0bd;text-align:center}
+
+@media (max-width:700px){
+  .card{grid-template-columns:1fr}
+  .text{padding:20px 18px}
+  .nav{grid-template-columns:repeat(9,1fr)}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
